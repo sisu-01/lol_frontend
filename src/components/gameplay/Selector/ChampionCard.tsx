@@ -24,8 +24,8 @@ const ChampionCard = ({ chmpId, winRate, isPending, selectId, handleHoverId, han
   
   if (!chmpDataJson) return null;
 
-  const bgUrl = `/images/champions/${chmpDataJson[chmpId]['eng']}_0.jpg`;
-  // const bgUrl = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${chmpDataJson[chmpId]['eng']}_0.jpg`;
+  // const bgUrl = `/images/champions/${chmpDataJson[chmpId]['eng']}_0.jpg`;
+  const bgUrl = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${chmpDataJson[chmpId]['eng']}_0.jpg`;
 
   const handleAnimeDone = () => {
     console.log(chmpId, "애니 끝!");
