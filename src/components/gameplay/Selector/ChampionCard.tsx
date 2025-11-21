@@ -47,7 +47,7 @@ const ChampionCard = ({ chmpId, winRate, isPending, selectId, handleHoverId, han
       >
         <div>
           <div className="text-5xl text-white font-bold">
-            {chmpDataJson[chmpId]['kor']}{winRate}<br/>{selectId === chmpId? '<- 이새끼 선택함' : ''}
+            {chmpDataJson[chmpId]['kor']}<br/>{selectId === chmpId? '<- 이새끼 선택함' : ''}
           </div>
           <div className="text-3xl text-white font-bold">
             {!animeDone && isPending && winRateAnimeEnd && selectId && winRate !== undefined?

@@ -201,6 +201,7 @@ export const useGame = (role: RoleType) => {
 
     const nextMatch = state.nextMatch;
     const preloadNextMatch = matchupsRef.current[state.score + 2];
+    console.log("승리: ", chmpDataJsonRef.current[nextMatch.winner].kor);
     dispatch({ type: "NEXT_LEVEL", payload: { nextMatch, preloadNextMatch } });
   }
 
