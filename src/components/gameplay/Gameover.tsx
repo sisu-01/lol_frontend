@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import GoogldAds from '../GoogleAds';
 
 interface gameOverProps {
   score: number;
@@ -10,7 +11,11 @@ const GameOver = ({ score }: gameOverProps) => {
   const goToMain = () => navigate('/');
 
   return (
-    <div className="h-full flex justify-center items-center flex-col">
+    <div className="flex flex-row justify-around items-stretch h-full">
+      <div>
+        <GoogldAds />
+      </div>
+      <div className="h-full flex justify-center items-center flex-col">
       <div className="flex flex-col justify-center items-center gap-4 bg-amber-200 p-4">
         <div>
           당신의 점수 {score}
@@ -24,6 +29,11 @@ const GameOver = ({ score }: gameOverProps) => {
         </div>
       </div>
     </div>
+      <div>
+        <GoogldAds />
+      </div>
+    </div>
+    
   );
 }
 

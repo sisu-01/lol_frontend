@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/home/HomePage";
 import GamePage from "./pages/game/GamePage";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
 
 const App = () => {
   
@@ -16,7 +15,7 @@ const App = () => {
               <Route path='/game' element={<GamePage />} />
           </Routes>
         </main>
-        <Footer />
+        <Header />
       </BrowserRouter>
     </div>
   )
