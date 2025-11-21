@@ -159,6 +159,11 @@ export const useGame = (role: RoleType) => {
     shuffleMatchups();
     const first = matchupsRef.current[0];
     const second = matchupsRef.current[1];
+    const img1 = new Image();
+    img1.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${chmpDataJsonRef.current[first.chmpA.id].eng}_0.jpg`;
+    const img2 = new Image();
+    img2.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${chmpDataJsonRef.current[first.chmpB.id].eng}_0.jpg`;
+
     if (first && second) {
       dispatch({ type: "GAME_INIT", payload: { first, second } });
     } else {
