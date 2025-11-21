@@ -77,7 +77,6 @@ export const useGame = (role: RoleType) => {
   const wait = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
   const init = useCallback(async () => {
-    await wait(500); // 로딩 테스트를 위해서 고의적으로 지연.
     const now = Date.now();
     const lastFetchDateTimeStr = localStorage.getItem("lastFetchDateTime");
     const hoursSinceLastFetch = lastFetchDateTimeStr
@@ -87,7 +86,7 @@ export const useGame = (role: RoleType) => {
     const matchupsStored = localStorage.getItem(`matchups`);
     const shouldFetch = !chmpDataStored || !matchupsStored || !lastFetchDateTimeStr || hoursSinceLastFetch >= 1;
     if (shouldFetch) {
-      localStorage.setItem("lastFetchDateTime", now.toString());
+      await wait(1000); // 로딩 테스트를 위해서 고의적으로 지연.
       const [fetchedChmpData, fetchedMatchups]: [ChmpDataJsonType, fetchedMatchupsType | null] = await Promise.all([
         getDataDragonChmpJson(),
         fetchMatchups()
@@ -97,6 +96,7 @@ export const useGame = (role: RoleType) => {
       }
       if (fetchedMatchups) {
         localStorage.setItem(`matchups`, JSON.stringify(parseFetchData(fetchedMatchups)));
+        localStorage.setItem("lastFetchDateTime", now.toString());
       }
     }
     chmpDataJsonRef.current = JSON.parse(localStorage.getItem(`chmpDataJson`) || "null");
