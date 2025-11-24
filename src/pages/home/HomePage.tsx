@@ -45,14 +45,38 @@ const Home = () => {
       </div>
 
       <div className="flex flex-col justify-center items-center gap-8 text-center px-4">
-        {/* 서브 타이틀 */}
-        <span className="text-lg sm:text-xl text-blue-200 drop-shadow">
-          둘이 싸우면 누가 이길까?
-        </span>
-        {/* 메인 타이틀 */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-wide drop-shadow-lg">
-          도전! 롤잘알
-        </h1>
+        <div className="flex flex-col items-center text-center relative">
+  {/* 서브 타이틀 */}
+  <span className="text-lg sm:text-xl text-gray-200 drop-shadow-md animate-fadeIn">
+    둘이 싸우면 누가 이길까?
+  </span>
+
+  {/* 메인 타이틀 */}
+  <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-wide mt-2 animate-fadeIn delay-200">
+    <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 drop-shadow-[0_0_15px_rgba(255,165,0,0.8)]">
+      도전!
+    </span>{" "}
+    <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-indigo-500 to-pink-500 drop-shadow-[0_0_15px_rgba(128,0,128,0.8)]">
+      롤잘알
+    </span>
+  </h1>
+</div>
+
+{/* TailwindCSS 확장: animations */}
+<style>
+    {`
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fadeIn {
+        animation: fadeIn 0.8s ease forwards;
+      }
+      .delay-200 {
+        animation-delay: 0.2s;
+      }
+    `}
+  </style>
         {/* 설명 문구 */}
         {/* <p className="text-base sm:text-lg text-gray-200 leading-relaxed max-w-xl drop-shadow">
           두 챔피언이 같은 라인에서 마주섰을 때,
