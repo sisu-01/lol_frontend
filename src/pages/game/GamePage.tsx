@@ -48,7 +48,7 @@ const GamePage = () => {
       <LifeBoard extraLife={extraLife} adLife={adLife} addExtraLife={addExtraLife} />
       {!isSliding ? (
         <>
-          <PositionBoard position={currentMatch.position} />
+          {role==="all" ? <PositionBoard position={currentMatch.position} /> : ''}
           <Versus />
         </>
       ): ("")}
