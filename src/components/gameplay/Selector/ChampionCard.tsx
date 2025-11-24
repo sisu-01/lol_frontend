@@ -35,7 +35,8 @@ const ChampionCard = ({ chmpId, winRate, isPending, selectId, handleHoverId, han
 
   return (
     <div className="w-full h-full overflow-hidden">
-      <div className={`select-none w-full h-full flex justify-center items-center bg-cover bg-center cursor-pointer ${selectId ? "" : "hover:scale-105"}`}
+      <div
+        className={`select-none w-full h-full flex justify-center items-center bg-cover bg-center cursor-pointer ${selectId ? "" : "hover:scale-105"}`}
         style={{
           backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${bgUrl})`,
           filter: `brightness(${brightness})`,
@@ -45,20 +46,17 @@ const ChampionCard = ({ chmpId, winRate, isPending, selectId, handleHoverId, han
         onMouseEnter={() => handleHoverId?.(chmpId)}
         onMouseLeave={() => handleHoverId?.(null)}
       >
-        <div>
-          <div className="text-5xl text-white font-bold">
-            {chmpDataJson[chmpId]['kor']}<br/>{selectId === chmpId? '<- 이새끼 선택함' : ''}
+        <div className="text-center">
+          <div className="text-4xl md:text-5xl lg:text-6xl text-white font-bold">
+            {chmpDataJson[chmpId]['kor']}
+            {selectId === chmpId && <span className="text-yellow-400 text-2xl">✔</span>}
           </div>
-          <div className="text-3xl text-white font-bold">
-            {!animeDone && isPending && winRateAnimeEnd && selectId && winRate !== undefined?
-              <WinRate
-                winRate={winRate}
-                winRateAnimeEnd={handleAnimeDone}
-              />
-              :
-              ""
+          <div className="text-2xl md:text-3xl lg:text-4xl text-white font-bold mt-2">
+            {!animeDone && isPending && winRateAnimeEnd && selectId && winRate !== undefined
+              ? <WinRate winRate={winRate} winRateAnimeEnd={handleAnimeDone} />
+              : ""
             }
-            {animeDone? winRate?.toFixed(2)+"%" : ""}
+            {animeDone ? winRate?.toFixed(2) + "%" : ""}
           </div>
         </div>
       </div>

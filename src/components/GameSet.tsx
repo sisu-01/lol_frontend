@@ -11,7 +11,7 @@ const GameSet = <T extends string>({ items, setItem, selected }: GameSetProps<T>
         <button
           key={item.id}
           onClick={() => setItem(item.id)}
-          className={selected === item.id ? 'bg-blue-500' : ''}
+          className={`rounded-sm transition ${selected === item.id ? 'bg-green-500 text-white' : 'bg-white text-gray-800 hover:bg-gray-100'}`}
         >
           {item.txt}
         </button>

@@ -32,7 +32,7 @@ const Home = () => {
   }
     
   return (
-    <div className="flex flex-row justify-around items-stretch h-full"
+    <div className="h-full flex flex-row justify-between items-center"
       style={{
         backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(${getRandomBg()})`,
         backgroundPosition: "center",
@@ -40,34 +40,43 @@ const Home = () => {
         backgroundRepeat: "no-repeat"
       }}
     >
-      <div>
+      <div className="hidden md:block p-4">
         <GoogldAds />
       </div>
-      <div className="flex flex-col justify-center items-center gap-5">
-        <div>
-          <span className="text-white">
-            둘이 싸우면 누가 이길까?
-          </span>
-        </div>
-        <div>
-          <span className="text-5xl text-white">도전! 롤잘알</span>
-        </div>
-        <div>
-          <span className="text-white">
-            두 챔피언이 같은 라인으로 마주섰을 때 게임 승률이 어느 쪽이 더 높으가 알아맞춰보세요.
-          </span>
-        </div>
-        <div className="flex flex-col justify-center gap-4 bg-red-200 p-4">        
-          <div className="bg-blue-200">
+
+      <div className="flex flex-col justify-center items-center gap-8 text-center px-4">
+        {/* 서브 타이틀 */}
+        <span className="text-lg sm:text-xl text-blue-200 drop-shadow">
+          둘이 싸우면 누가 이길까?
+        </span>
+        {/* 메인 타이틀 */}
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-wide drop-shadow-lg">
+          도전! 롤잘알
+        </h1>
+        {/* 설명 문구 */}
+        {/* <p className="text-base sm:text-lg text-gray-200 leading-relaxed max-w-xl drop-shadow">
+          두 챔피언이 같은 라인에서 마주섰을 때,
+          <br />
+          어느 쪽의 승률이 더 높은지 맞춰보세요!
+        </p> */}
+        {/* 역할 선택 카드 */}
+        <div className="flex flex-col justify-center gap-6 bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl max-w-md w-full">
+          <div className="p-4 backdrop-blur rounded-xl shadow-inner">
             <GameSet items={rolesData} setItem={setRole} selected={role} />
           </div>
-          <button onClick={() => gameStart()}>게임시작</button>
+          <button
+            onClick={gameStart}
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl shadow-lg transition-all active:scale-95"
+          >
+            게임 시작
+          </button>
         </div>
-        <div className="text-gray-400 text-[16px] leading-4">
+        {/* 하단 안내 텍스트 */}
+        <div className="text-gray-300 text-sm sm:text-base leading-4 mt-4">
           매치업은 최신 op.gg 데이터 기준입니다.
         </div>
       </div>
-      <div>
+      <div className="hidden md:block p-4">
         <GoogldAds />
       </div>
     </div>
