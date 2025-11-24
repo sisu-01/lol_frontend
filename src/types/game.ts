@@ -21,6 +21,7 @@ export type GameStateType = {
   isPending: boolean;
   isSliding: boolean;
   error: boolean;
+  round: number;
   score: number;
   showAdModal: boolean;
   extraLife: number;

@@ -19,16 +19,13 @@ const Selector = ({ matchProps, isPending, setIsPending, isCorrectChampion }: Se
   useEffect(() => {
     selectIdRef.current = selectId;
     if (!isPending) {
-      console.log("selector useEffect selectId = null");
       setSelectId(null);
     }
   }, [isPending, selectId]);
 
   const handleHoverId = (id: number | null) => { if (!isPending) setHoverId(id); }
   const handleSelectId = (id: number) => {
-    console.log("하리스메다");
     if (isPending || selectId) return;
-    console.log("유민우");
     setHoverId(null);
     setSelectId(id);
     setIsPending(true);
@@ -40,9 +37,7 @@ const Selector = ({ matchProps, isPending, setIsPending, isCorrectChampion }: Se
       if (next === 2) {
         setDoneCount(0);
         setTimeout(() => {
-          console.log("3000ms 대기 완료", selectIdRef.current);
           if (!selectIdRef.current) return;
-          console.log("isCorroectChampion");
           isCorrectChampion(selectIdRef.current);
         }, CHECK_WAIT);
       }

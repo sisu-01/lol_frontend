@@ -10,6 +10,7 @@ const initialState: GameStateType = {
   isSliding: false,
   showAdModal: false,
   error: false,
+  round: 0,
   score: 0,
   extraLife: 3,
   adLife: false,
@@ -47,6 +48,7 @@ const reducer = (state: GameStateType, action: GameActionType): GameStateType =>
         ...state,
         isSliding: false,
         isPending: false,
+        round: state.round + 1,
         currentMatch: action.payload.nextMatch,
         nextMatch: action.payload.preloadNextMatch,
       }
@@ -65,8 +67,7 @@ const reducer = (state: GameStateType, action: GameActionType): GameStateType =>
     case "LIFE_DONW":
       return {
         ...state,
-        extraLife: state.extraLife - 1,
-        isSliding: true
+        extraLife: state.extraLife - 1
       }
     case "LIFE_UP":
       return {
@@ -191,38 +192,37 @@ export const useGame = (role: RoleType) => {
 
   const isCorrectChampion = (selectId: number) => {
     if (state.showAdModal || state.isSliding || !state.currentMatch || state.gameover) return;
-    console.log("판독 완료");
 
-    const { winner, chmpA, chmpB } = state.currentMatch;
+    const { winner } = state.currentMatch;
     const isCorrect = winner === selectId || winner === 0;
     if (isCorrect) {
-      const isClose = Math.abs(chmpA.winRate - chmpB.winRate) < 2
-      if (isClose) {
-        console.log("근소했다.");
-      }
+      // const isClose = Math.abs(chmpA.winRate - chmpB.winRate) < 2
+      // if (isClose) {
+      //   console.log("근소했다.");
+      // }
       dispatch({ type: "SCORE_UP" });
       dispatch({ type: "SLIDE_START" });
       // nextLevel();
-      return true;
+      return;
     }
 
     if (state.extraLife > 1) {
       dispatch({ type: "LIFE_DONW" })
+      dispatch({ type: "SLIDE_START" });
     } else {
       gameOver();
     }
-    return false;
   }
 
   const switchCurrentAndNextMatch = () => {
     if (!state.nextMatch) return;
     console.log("다음 단계다");
     const nextMatch = state.nextMatch;
-    const preloadNextMatch = matchupsRef.current[state.score + 2];
+    const preloadNextMatch = matchupsRef.current[state.round + 2];
+    console.log(nextMatch, preloadNextMatch);
     if (nextMatch.winner) {
       console.log("승리: ", chmpDataJsonRef.current[nextMatch.winner].kor);
     } else {
-      // 신짜오 자이라 에러, 다이애나 렉사이
       console.log("비빔", nextMatch.winner);
     }
     
