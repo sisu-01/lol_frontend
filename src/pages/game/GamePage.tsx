@@ -26,13 +26,16 @@ const GamePage = () => {
     error,
     score,
     extraLife,
+    adLife,
     gameover,
     currentMatch,
     nextMatch,
     setIsPending,
+    addExtraLife,
+    setModalHide,
     isCorrectChampion,
     switchCurrentAndNextMatch,
-    modalChoice
+    // modalChoice
    } = useGame(role);
 
   if (error) return <Error />;
@@ -42,7 +45,7 @@ const GamePage = () => {
   return (
     <>
       <ScoreBoard score={score} />
-      <LifeBoard extraLife={extraLife} />
+      <LifeBoard extraLife={extraLife} adLife={adLife} addExtraLife={addExtraLife} />
       {!isSliding ? (
         <>
           <PositionBoard position={currentMatch.position} />
@@ -61,7 +64,7 @@ const GamePage = () => {
         />
       </dDragonContext.Provider>
 
-      {showAdModal && <Admodal modalChoice={modalChoice} />}
+      {showAdModal && <Admodal modalChoice={()=>{}} setModalHide={setModalHide} />}
     </>
   );
 }

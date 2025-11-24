@@ -12,6 +12,7 @@ const initialState: GameStateType = {
   error: false,
   score: 0,
   extraLife: 3,
+  adLife: false,
   gameover: false,
   currentMatch: null,
   nextMatch: null
@@ -53,7 +54,8 @@ const reducer = (state: GameStateType, action: GameActionType): GameStateType =>
       return {
         ...state,
         showAdModal: true,
-        extraLife: 3,
+        extraLife: state.extraLife + 1,
+        adLife: true
       }
     case "MODAL_HIDE":
       return {
@@ -69,6 +71,7 @@ const reducer = (state: GameStateType, action: GameActionType): GameStateType =>
     case "LIFE_UP":
       return {
         ...state,
+        adLife: true,
         extraLife: state.extraLife + 1
       }
     case "GAME_OVER":
@@ -227,14 +230,14 @@ export const useGame = (role: RoleType) => {
     dispatch({ type: "NEXT_LEVEL", payload: { nextMatch, preloadNextMatch } });
   }
 
-  const modalChoice = (choice: boolean) => {
-    dispatch({ type: "MODAL_HIDE" });
-    if (choice) {
-      switchCurrentAndNextMatch();
-    } else {
-      gameOver();
-    }
-  }
+  // const modalChoice = (choice: boolean) => {
+  //   dispatch({ type: "MODAL_HIDE" });
+  //   if (choice) {
+  //     switchCurrentAndNextMatch();
+  //   } else {
+  //     gameOver();
+  //   }
+  // }
 
   const gameOver = () => {
     const stored = localStorage.getItem("highestScore");
@@ -258,8 +261,10 @@ export const useGame = (role: RoleType) => {
     chmpDataJson: chmpDataJsonRef.current,
     ...state,
     setIsPending: (value: boolean) => dispatch({ type: "GAME_PEND", payload: { value } }),
+    addExtraLife: () => dispatch({ type: "MODAL_SHOW" }),
+    setModalHide: () => dispatch({ type: "MODAL_HIDE" }),
     isCorrectChampion,
     switchCurrentAndNextMatch,
-    modalChoice
+    // modalChoice
    };
 }
