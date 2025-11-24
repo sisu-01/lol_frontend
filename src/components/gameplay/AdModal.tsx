@@ -1,11 +1,10 @@
 import { useEffect } from "react";
 
 interface AdModalProps {
-  modalChoice: (choice: boolean) => void;
   setModalHide: () => void;
 }
 
-const Admodal = ({ modalChoice, setModalHide }: AdModalProps ) => {
+const Admodal = ({ setModalHide }: AdModalProps ) => {
 
   // const showAd = () => {
   //   alert("대충 광고");

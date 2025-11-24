@@ -208,7 +208,6 @@ export const useGame = (role: RoleType) => {
 
     if (state.extraLife > 1) {
       dispatch({ type: "LIFE_DONW" })
-      // dispatch({ type: "MODAL_SHOW" })
     } else {
       gameOver();
     }
@@ -229,15 +228,6 @@ export const useGame = (role: RoleType) => {
     
     dispatch({ type: "NEXT_LEVEL", payload: { nextMatch, preloadNextMatch } });
   }
-
-  // const modalChoice = (choice: boolean) => {
-  //   dispatch({ type: "MODAL_HIDE" });
-  //   if (choice) {
-  //     switchCurrentAndNextMatch();
-  //   } else {
-  //     gameOver();
-  //   }
-  // }
 
   const gameOver = () => {
     const stored = localStorage.getItem("highestScore");
@@ -265,6 +255,5 @@ export const useGame = (role: RoleType) => {
     setModalHide: () => dispatch({ type: "MODAL_HIDE" }),
     isCorrectChampion,
     switchCurrentAndNextMatch,
-    // modalChoice
    };
 }

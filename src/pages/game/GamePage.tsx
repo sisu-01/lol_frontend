@@ -35,7 +35,6 @@ const GamePage = () => {
     setModalHide,
     isCorrectChampion,
     switchCurrentAndNextMatch,
-    // modalChoice
    } = useGame(role);
 
   if (error) return <Error />;
@@ -64,7 +63,7 @@ const GamePage = () => {
         />
       </dDragonContext.Provider>
 
-      {showAdModal && <Admodal modalChoice={()=>{}} setModalHide={setModalHide} />}
+      {showAdModal && <Admodal setModalHide={setModalHide} />}
     </>
   );
 }
