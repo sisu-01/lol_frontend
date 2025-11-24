@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build && powershell Copy-Item dist/index.html dist/404.html",
+    "predeploy": "npm run build && powershell Copy-Item dist/index.html dist/404.html && powershell Copy-Item CNAME dist/CNAME",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
