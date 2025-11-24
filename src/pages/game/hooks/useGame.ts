@@ -11,7 +11,7 @@ const initialState: GameStateType = {
   showAdModal: false,
   error: false,
   score: 0,
-  extraLife: true,
+  extraLife: 3,
   gameover: false,
   currentMatch: null,
   nextMatch: null
@@ -36,12 +36,16 @@ const reducer = (state: GameStateType, action: GameActionType): GameStateType =>
         ...state,
         isSliding: true
       }
+    case "SCORE_UP":
+      return {
+        ...state,
+        score: state.score + 1
+      }
     case "NEXT_LEVEL":
       return {
         ...state,
         isSliding: false,
         isPending: false,
-        score: state.score + 1,
         currentMatch: action.payload.nextMatch,
         nextMatch: action.payload.preloadNextMatch,
       }
@@ -49,12 +53,23 @@ const reducer = (state: GameStateType, action: GameActionType): GameStateType =>
       return {
         ...state,
         showAdModal: true,
-        extraLife: false
+        extraLife: 3,
       }
     case "MODAL_HIDE":
       return {
         ...state,
         showAdModal: false
+      }
+    case "LIFE_DONW":
+      return {
+        ...state,
+        extraLife: state.extraLife - 1,
+        isSliding: true
+      }
+    case "LIFE_UP":
+      return {
+        ...state,
+        extraLife: state.extraLife + 1
       }
     case "GAME_OVER":
       return {
@@ -182,15 +197,17 @@ export const useGame = (role: RoleType) => {
       if (isClose) {
         console.log("근소했다.");
       }
+      dispatch({ type: "SCORE_UP" });
       dispatch({ type: "SLIDE_START" });
       // nextLevel();
       return true;
-    } 
+    }
 
-    if (state.extraLife) {
-      dispatch({ type: "MODAL_SHOW" })
+    if (state.extraLife > 1) {
+      dispatch({ type: "LIFE_DONW" })
+      // dispatch({ type: "MODAL_SHOW" })
     } else {
-      dispatch({ type: "GAME_OVER" });
+      gameOver();
     }
     return false;
   }
@@ -198,10 +215,15 @@ export const useGame = (role: RoleType) => {
   const switchCurrentAndNextMatch = () => {
     if (!state.nextMatch) return;
     console.log("다음 단계다");
-
     const nextMatch = state.nextMatch;
     const preloadNextMatch = matchupsRef.current[state.score + 2];
-    console.log("승리: ", chmpDataJsonRef.current[nextMatch.winner].kor);
+    if (nextMatch.winner) {
+      console.log("승리: ", chmpDataJsonRef.current[nextMatch.winner].kor);
+    } else {
+      // 신짜오 자이라 에러, 다이애나 렉사이
+      console.log("비빔", nextMatch.winner);
+    }
+    
     dispatch({ type: "NEXT_LEVEL", payload: { nextMatch, preloadNextMatch } });
   }
 
@@ -210,8 +232,18 @@ export const useGame = (role: RoleType) => {
     if (choice) {
       switchCurrentAndNextMatch();
     } else {
-      dispatch({ type: "GAME_OVER" });
+      gameOver();
     }
+  }
+
+  const gameOver = () => {
+    const stored = localStorage.getItem("highestScore");
+    const highestScore = stored ? Number(stored) : 0;
+
+    if (state.score > highestScore) {
+      localStorage.setItem("highestScore", String(state.score));
+    }
+    dispatch({ type: "GAME_OVER" });
   }
 
   useEffect(() => {

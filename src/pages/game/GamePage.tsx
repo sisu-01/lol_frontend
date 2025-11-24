@@ -11,6 +11,7 @@ import type { RoleType } from "../../types/game";
 import { dDragonContext } from "../../context/dDragonContext";
 import PositionBoard from "../../components/gameplay/PositionBoard";
 import Admodal from "../../components/gameplay/AdModal";
+import LifeBoard from "../../components/gameplay/LifeBoard";
 
 const GamePage = () => {
   const [searchParams] = useSearchParams();
@@ -24,6 +25,7 @@ const GamePage = () => {
     showAdModal,
     error,
     score,
+    extraLife,
     gameover,
     currentMatch,
     nextMatch,
@@ -40,6 +42,7 @@ const GamePage = () => {
   return (
     <>
       <ScoreBoard score={score} />
+      <LifeBoard extraLife={extraLife} />
       {!isSliding ? (
         <>
           <PositionBoard position={currentMatch.position} />
