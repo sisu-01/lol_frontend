@@ -32,7 +32,7 @@ const Home = () => {
   }
     
   return (
-    <div className="w-full h-full flex flex-row justify-center items-center"
+    <div className="w-full h-full flex flex-row justify-between items-center"
       style={{
         backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(${getRandomBg()})`,
         backgroundPosition: "center",
@@ -44,7 +44,7 @@ const Home = () => {
         <GoogldAds />
       </div>
 
-      <div className="flex flex-col justify-center items-center gap-8 text-center px-4">
+      <div className="w-full flex flex-col justify-center items-center gap-8 text-center px-4">
         <div className="flex flex-col items-center text-center relative">
           {/* 서브 타이틀 */}
           <span className="text-base sm:text-lg text-gray-200 drop-shadow-md animate-fadeIn">
