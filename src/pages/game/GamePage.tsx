@@ -45,7 +45,7 @@ const GamePage = () => {
   return (
     <>
       <ScoreBoard score={score} />
-      <LifeBoard extraLife={extraLife} adLife={adLife} addExtraLife={addExtraLife} />
+      <LifeBoard extraLife={extraLife} adLife={adLife} addExtraLife={addExtraLife} isPending={isPending}/>
       {!isSliding ? (
         <>
           {role==="all" ? <PositionBoard position={currentMatch.position} /> : ''}
