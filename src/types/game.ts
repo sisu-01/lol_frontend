@@ -31,7 +31,8 @@ export type GameStateType = {
   nextMatch: MatchDataType | null;
 }
 export type GameActionType =
-  | { type: "GAME_INIT"; payload: { first: MatchDataType; second: MatchDataType; } }
+  | { type: "GAME_INIT"; }
+  | { type: "GAME_START"; payload: { first: MatchDataType; second: MatchDataType; } }
   | { type: "GAME_PEND"; payload: { value: boolean } }
   | { type: "SLIDE_START"; }
   | { type: "SCORE_UP"; }

@@ -4,9 +4,10 @@ import ReactGA from "react-ga4"
 
 interface gameOverProps {
   score: number;
+  gameStart: () => void;
 }
 
-const GameOver = ({ score }: gameOverProps) => {
+const GameOver = ({ score, gameStart }: gameOverProps) => {
   const navigate = useNavigate();
   const playAgain = () => {
     ReactGA.gtag('event', 'game_restart', {
@@ -14,9 +15,7 @@ const GameOver = ({ score }: gameOverProps) => {
       label: 'restart_button',
       value: 1
     });
-    setTimeout(() => {
-      window.location.reload();
-    }, 150);
+    gameStart();
   }
   const goToMain = () => {
     ReactGA.gtag('event', 'game_main', {

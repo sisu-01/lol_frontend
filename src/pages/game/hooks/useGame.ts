@@ -23,8 +23,10 @@ const initialState: GameStateType = {
 const reducer = (state: GameStateType, action: GameActionType): GameStateType => {
   switch (action.type) {
     case "GAME_INIT":
+      return initialState
+    case "GAME_START":
       return {
-        ...state,
+        ...initialState,
         isLoading: false,
         currentMatch: action.payload.first,
         nextMatch: action.payload.second
@@ -106,7 +108,6 @@ export const useGame = (role: RoleType) => {
     const matchupsStored = localStorage.getItem(`matchups`);
     const shouldFetch = !chmpDataStored || !matchupsStored || !lastFetchDateTimeStr || hoursSinceLastFetch >= 1;
     if (shouldFetch) {
-      await wait(1000); // 로딩 테스트를 위해서 고의적으로 지연.
       const [fetchedChmpData, fetchedMatchups]: [ChmpDataJsonType, fetchedMatchupsType | null] = await Promise.all([
         getDataDragonChmpJson(),
         fetchMatchups()
@@ -173,9 +174,10 @@ export const useGame = (role: RoleType) => {
     matchupsRef.current = arr;
   }
 
-
   // 시작이다
-  const gameStart = useCallback(() => {
+  const gameStart = useCallback(async () => {
+    dispatch({ type: "GAME_INIT" });
+    console.log("게임 시작");
     ReactGA.gtag('event', 'game_start', {
       category: 'game',
       label: 'start_function',
@@ -189,9 +191,11 @@ export const useGame = (role: RoleType) => {
     img1.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${chmpDataJsonRef.current[first.chmpA.id].eng}_0.jpg`;
     const img2 = new Image();
     img2.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${chmpDataJsonRef.current[first.chmpB.id].eng}_0.jpg`;
+    console.log("기다렷! 이미지 로딩 완료?");
+    await wait(1000); // 로딩 테스트를 위해서 고의적으로 지연.
 
     if (first && second) {
-      dispatch({ type: "GAME_INIT", payload: { first, second } });
+      dispatch({ type: "GAME_START", payload: { first, second } });
     } else {
       dispatch({ type: "GAME_ERROR" });
     }
@@ -263,6 +267,7 @@ export const useGame = (role: RoleType) => {
   return {
     chmpDataJson: chmpDataJsonRef.current,
     ...state,
+    gameStart: gameStart,
     setIsPending: (value: boolean) => dispatch({ type: "GAME_PEND", payload: { value } }),
     addExtraLife: () => dispatch({ type: "MODAL_SHOW" }),
     setModalHide: () => dispatch({ type: "MODAL_HIDE" }),

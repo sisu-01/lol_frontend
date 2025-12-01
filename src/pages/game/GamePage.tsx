@@ -30,6 +30,7 @@ const GamePage = () => {
     gameover,
     currentMatch,
     nextMatch,
+    gameStart,
     setIsPending,
     addExtraLife,
     setModalHide,
@@ -38,7 +39,7 @@ const GamePage = () => {
    } = useGame(role);
 
   if (error) return <Error />;
-  if (gameover) return <GameOver score={score} />;
+  if (gameover) return <GameOver score={score} gameStart={gameStart} />;
   if (isLoading || currentMatch === null || nextMatch === null) return <Loading />;
 
   return (
