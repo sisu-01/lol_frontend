@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import GoogldAds from "../GoogleAds";
+import ReactGA from "react-ga4"
 
 interface gameOverProps {
   score: number;
@@ -7,8 +8,24 @@ interface gameOverProps {
 
 const GameOver = ({ score }: gameOverProps) => {
   const navigate = useNavigate();
-  const playAgain = () => window.location.reload();
-  const goToMain = () => navigate("/");
+  const playAgain = () => {
+    ReactGA.gtag('event', 'game_restart', {
+      category: 'game',
+      label: 'restart_button',
+      value: 1
+    });
+    setTimeout(() => {
+      window.location.reload();
+    }, 150);
+  }
+  const goToMain = () => {
+    ReactGA.gtag('event', 'game_main', {
+      category: 'game',
+      label: 'main_button',
+      value: 1
+    });
+    navigate("/");
+  }
 
   const url = "https://media1.tenor.com/m/MusbmvXoZXYAAAAd/lol-defeat-game.gif";
 

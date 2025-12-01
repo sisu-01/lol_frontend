@@ -3,6 +3,7 @@ import { useCallback, useEffect, useReducer, useRef } from "react";
 import type { ChmpDataJsonType, fetchedMatchupsType, GameActionType, GameStateType, MatchDataType, RoleType } from "../../../types/game";
 import { fetchMatchups } from "../../../api/matchups";
 import { getDataDragonChmpJson } from "../../../api/ddragon";
+import ReactGA from "react-ga4"
 
 const initialState: GameStateType = {
   isLoading: true,
@@ -175,6 +176,12 @@ export const useGame = (role: RoleType) => {
 
   // 시작이다
   const gameStart = useCallback(() => {
+    ReactGA.gtag('event', 'game_start', {
+      category: 'game',
+      label: 'start_function',
+      value: 1
+    });
+
     shuffleMatchups();
     const first = matchupsRef.current[0];
     const second = matchupsRef.current[1];
@@ -230,6 +237,12 @@ export const useGame = (role: RoleType) => {
   }
 
   const gameOver = () => {
+    ReactGA.gtag('event', 'game_score', {
+      category: 'game',
+      label: `mode_${role}`,
+      value: state.score
+    });
+    
     const stored = localStorage.getItem("highestScore");
     const highestScore = stored ? Number(stored) : 0;
 
