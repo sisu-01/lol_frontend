@@ -269,7 +269,6 @@ export const useGame = (role: RoleType) => {
     ...state,
     gameStart: gameStart,
     setIsPending: (value: boolean) => dispatch({ type: "GAME_PEND", payload: { value } }),
-    addExtraLife: () => dispatch({ type: "MODAL_SHOW" }),
     setModalHide: () => dispatch({ type: "MODAL_HIDE" }),
     isCorrectChampion,
     switchCurrentAndNextMatch,

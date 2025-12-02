@@ -26,13 +26,11 @@ const GamePage = () => {
     error,
     score,
     extraLife,
-    adLife,
     gameover,
     currentMatch,
     nextMatch,
     gameStart,
     setIsPending,
-    addExtraLife,
     setModalHide,
     isCorrectChampion,
     switchCurrentAndNextMatch,
@@ -45,7 +43,7 @@ const GamePage = () => {
   return (
     <>
       <ScoreBoard score={score} />
-      <LifeBoard extraLife={extraLife} adLife={adLife} addExtraLife={addExtraLife} isPending={isPending}/>
+      <LifeBoard extraLife={extraLife} />
       {!isSliding ? (
         <>
           {role==="all" ? <PositionBoard position={currentMatch.position} /> : ''}
