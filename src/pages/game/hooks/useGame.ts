@@ -177,7 +177,6 @@ export const useGame = (role: RoleType) => {
   // 시작이다
   const gameStart = useCallback(async () => {
     dispatch({ type: "GAME_INIT" });
-    console.log("게임 시작");
     ReactGA.gtag('event', 'game_start', {
       category: 'game',
       label: 'start_function',
@@ -191,7 +190,6 @@ export const useGame = (role: RoleType) => {
     img1.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${chmpDataJsonRef.current[first.chmpA.id].eng}_0.jpg`;
     const img2 = new Image();
     img2.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${chmpDataJsonRef.current[first.chmpB.id].eng}_0.jpg`;
-    console.log("기다렷! 이미지 로딩 완료?");
     await wait(1000); // 로딩 테스트를 위해서 고의적으로 지연.
 
     if (first && second) {
@@ -227,15 +225,8 @@ export const useGame = (role: RoleType) => {
 
   const switchCurrentAndNextMatch = () => {
     if (!state.nextMatch) return;
-    console.log("다음 단계다");
     const nextMatch = state.nextMatch;
     const preloadNextMatch = matchupsRef.current[state.round + 2];
-    console.log(nextMatch, preloadNextMatch);
-    if (nextMatch.winner) {
-      console.log("승리: ", chmpDataJsonRef.current[nextMatch.winner].kor);
-    } else {
-      console.log("비빔", nextMatch.winner);
-    }
     
     dispatch({ type: "NEXT_LEVEL", payload: { nextMatch, preloadNextMatch } });
   }
