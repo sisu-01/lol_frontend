@@ -41,7 +41,7 @@ const Home = () => {
       }}
     >
       <div className="hidden md:block p-4">
-        <GoogldAds />
+        {/* <GoogldAds /> */}
       </div>
 
       <div className="w-full flex flex-col justify-center items-center gap-8 text-center px-4">
@@ -82,7 +82,7 @@ const Home = () => {
         </div>
       </div>
       <div className="hidden md:block p-4">
-        <GoogldAds />
+        {/* <GoogldAds /> */}
       </div>
       {/* TailwindCSS 확장: animations */}
       <style>

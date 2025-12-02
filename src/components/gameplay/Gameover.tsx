@@ -40,7 +40,7 @@ const GameOver = ({ score, gameStart }: gameOverProps) => {
     >
       {/* 좌측 광고 */}
       <div className="hidden md:block p-4">
-        <GoogldAds />
+        {/* <GoogldAds /> */}
       </div>
 
       {/* 중앙 결과 카드 */}
@@ -79,7 +79,7 @@ const GameOver = ({ score, gameStart }: gameOverProps) => {
 
       {/* 우측 광고 */}
       <div className="hidden md:block p-4">
-        <GoogldAds />
+        {/* <GoogldAds /> */}
       </div>
     </div>
   );
