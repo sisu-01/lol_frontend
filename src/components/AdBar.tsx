@@ -12,7 +12,7 @@ const AdBar = ({ position }: adBarProps) => {
   }
 
   return (
-    <div className="container w-full h-[60px] sm:h-[100px] flex justify-center items-center">
+    <div className="w-full h-[60px] sm:h-[100px] flex justify-center items-center">
       {slots[position].map((slot) => (
         <GoogleAds key={slot} slot={slot} />
       ))}
