@@ -7,7 +7,7 @@ import GATracker from "./components/GATracker";
 const App = () => {
   
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col h-dvh">
       <BrowserRouter basename={`${import.meta.env.VITE_PUBLIC_URL}`}>
         <GATracker />
         <AdBar position='header' />
