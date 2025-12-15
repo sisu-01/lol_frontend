@@ -1,7 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=block');
 
 body {
   font-family: 'Noto Sans KR', sans-serif;
+}
+
+.desc {
+  font-family: "East Sea Dokdo", cursive;
 }
 
 @import "tailwindcss";

@@ -44,21 +44,14 @@ const Home = () => {
         {/* <GoogldAds /> */}
       </div>
 
-      <div className="w-full flex flex-col justify-center items-center gap-8 text-center px-4">
-        <div className="flex flex-col items-center text-center relative">
-          {/* 서브 타이틀 */}
-          <span className="text-base sm:text-lg text-gray-200 drop-shadow-md animate-fadeIn">
-            둘이 싸우면 누가 이길까?
+      <div className="w-full flex flex-col justify-center items-center gap-5 text-center px-4">
+        <div>
+          <img src="/logo.svg" className="h-[200px]" alt="도전! 롤든벨" />
+        </div>
+        <div>
+          <span className="desc text-base sm:text-6xl text-gray-200 drop-shadow-md animate-fadeIn">
+            둘이 싸우면&nbsp;<span className="text-yellow-200">누가</span>&nbsp;이길까?
           </span>
-          {/* 메인 타이틀 */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-wide mt-2 animate-fadeIn delay-200">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 drop-shadow-[0_0_15px_rgba(255,165,0,0.8)]">
-              도전!
-            </span>{" "}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-indigo-500 to-pink-500 drop-shadow-[0_0_15px_rgba(128,0,128,0.8)]">
-              롤든벨
-            </span>
-          </h1>
         </div>
         {/* 설명 문구 */}
         <p className="text-sm sm:text-base text-gray-200 leading-relaxed max-w-xl drop-shadow mt-3">
@@ -77,9 +70,9 @@ const Home = () => {
           </button>
         </div>
         {/* 하단 안내 텍스트 */}
-        {/* <div className="text-gray-300 text-sm sm:text-base leading-4 mt-4">
+        <div className="text-gray-300 text-sm sm:text-base leading-4 mt-4">
           매치업은 최신 op.gg 데이터 기준입니다.
-        </div> */}
+        </div>
       </div>
       <div className="hidden md:block p-4">
         {/* <GoogldAds /> */}
