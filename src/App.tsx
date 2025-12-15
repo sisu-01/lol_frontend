@@ -11,7 +11,7 @@ const App = () => {
       <BrowserRouter basename={`${import.meta.env.VITE_PUBLIC_URL}`}>
         <GATracker />
         <AdBar position='header' />
-        <main className="flex-1 relative w-full h-full">
+        <main className="absolute top-[60px] bottom-[60px] sm:top-[90px] sm:bottom-[90px] overflow-hidden flex-1 w-full">
           <Routes>
               <Route path='/' element={<HomePage />} />
               <Route path='/game' element={<GamePage />} />
