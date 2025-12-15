@@ -62,7 +62,7 @@ const Home = () => {
         </div>
         {/* 설명 문구 */}
         <p className="text-sm sm:text-base text-gray-200 leading-relaxed max-w-xl drop-shadow mt-3">
-          ** 라인전 승패 말고 게임 전체 승률을 맞춰주세요!😋**
+          ** 라인전 승패 말고 게임 최종 승자를 맞춰주세요!😋**
         </p>
         {/* 역할 선택 카드 */}
         <div className="flex flex-col justify-center gap-6 bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl max-w-md w-full">
