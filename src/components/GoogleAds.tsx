@@ -41,13 +41,14 @@ const GoogldAds = ({ slot }: googleAdsProps) => {
   }, []);
 
   return (
+    // <>시발</>
     <ins
       className="adsbygoogle"
-      style={{ display: "block", width: "100%" }}
       data-ad-client="ca-pub-8512787804038939"
       data-ad-slot={slots[slot]}
-      data-ad-format="auto"
+      data-ad-format="horizontal"
       data-full-width-responsive="true"
+      style={{ display: "block", width: "100%" }}
     ></ins>
   );
 }
