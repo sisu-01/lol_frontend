@@ -56,7 +56,7 @@ const Home = () => {
               도전!
             </span>{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-indigo-500 to-pink-500 drop-shadow-[0_0_15px_rgba(128,0,128,0.8)]">
-              롤잘알
+              롤든벨
             </span>
           </h1>
         </div>
