@@ -77,9 +77,9 @@ const Home = () => {
           </button>
         </div>
         {/* 하단 안내 텍스트 */}
-        <div className="text-gray-300 text-sm sm:text-base leading-4 mt-4">
+        {/* <div className="text-gray-300 text-sm sm:text-base leading-4 mt-4">
           매치업은 최신 op.gg 데이터 기준입니다.
-        </div>
+        </div> */}
       </div>
       <div className="hidden md:block p-4">
         {/* <GoogldAds /> */}
