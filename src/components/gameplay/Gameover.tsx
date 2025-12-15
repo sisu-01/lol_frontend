@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import GoogldAds from "../GoogleAds";
+// import GoogldAds from "../GoogleAds";
 import ReactGA from "react-ga4"
 
 interface gameOverProps {

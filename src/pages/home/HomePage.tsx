@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import GameSet from "../../components/GameSet";
 import type { RoleType } from "../../types/game";
 import { rolesData } from "../../data/game";
-import GoogldAds from "../../components/GoogleAds";
+// import GoogldAds from "../../components/GoogleAds";
 
 const Home = () => {
   const [role, setRole] = useState<RoleType| ''>('');
