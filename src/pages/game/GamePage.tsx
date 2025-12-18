@@ -38,7 +38,7 @@ const GamePage = () => {
 
   if (error) return <Error />;
   if (gameover) return <GameOver score={score} gameStart={gameStart} />;
-  if (isLoading || currentMatch === null || nextMatch === null) return <Loading />;
+  if (isLoading || currentMatch === null || nextMatch === null) return "";
 
   return (
     <>
