@@ -1,21 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://yourdomain.com/lol_frontend</loc>
+    <loc>https://www.lol-updown.com</loc>
   </url>
   <url>
-    <loc>https://yourdomain.com/lol_frontend/game?role=top</loc>
+    <loc>https://www.lol-updown.com/privacy</loc>
   </url>
   <url>
-    <loc>https://yourdomain.com/lol_frontend/game?role=jungle</loc>
+    <loc>https://www.lol-updown.com/terms</loc>
   </url>
   <url>
-    <loc>https://yourdomain.com/lol_frontend/game?role=mid</loc>
+    <loc>https://www.lol-updown.com/contact</loc>
   </url>
   <url>
-    <loc>https://yourdomain.com/lol_frontend/game?role=adc</loc>
+    <loc>https://www.lol-updown.com/about</loc>
   </url>
   <url>
-    <loc>https://yourdomain.com/lol_frontend/game?role=support</loc>
+    <loc>https://www.lol-updown.com/game?role=all</loc>
+  </url>
+  <url>
+    <loc>https://www.lol-updown.com/game?role=top</loc>
+  </url>
+  <url>
+    <loc>https://www.lol-updown.com/game?role=jungle</loc>
+  </url>
+  <url>
+    <loc>https://www.lol-updown.com/game?role=mid</loc>
+  </url>
+  <url>
+    <loc>https://www.lol-updown.com/game?role=adc</loc>
+  </url>
+  <url>
+    <loc>https://www.lol-updown.com/game?role=support</loc>
   </url>
 </urlset>
