@@ -1,8 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/home/HomePage";
 import GamePage from "./pages/game/GamePage";
+import Privacy from "./pages/privacy/PrivacyPage";
 // import AdBar from "./components/AdBar";
 import GATracker from "./components/GATracker";
+import FooterBar from "./components/FooterBar";
+import Terms from "./pages/terms/TermsPage";
+import Contact from "./pages/contact/ContactPage";
+import About from "./pages/about/AboutPage";
 
 const App = () => {
   
@@ -16,8 +21,13 @@ const App = () => {
           <Routes>
               <Route path='/' element={<HomePage />} />
               <Route path='/game' element={<GamePage />} />
+              <Route path='/privacy' element={<Privacy />} />
+              <Route path='/terms' element={<Terms />} />
+              <Route path='/contact' element={<Contact />} />
+              <Route path='/about' element={<About />} />
           </Routes>
         </main>
+        <FooterBar />
         {/* <AdBar position='footer' /> */}
       </BrowserRouter>
     </div>
