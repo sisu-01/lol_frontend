@@ -1,5 +1,7 @@
 <img width="1226" alt="logo" src="https://github.com/user-attachments/assets/74331cd2-ad64-45b8-947f-dc901b6b4ee9" />
 
+[![도전! 롤든벨](https://img.shields.io/badge/도전!롤든벨-플레이하기-00a0ba?style=for-the-badge&logo=riotgames&logoColor=white)](https://lol-updown.com)
+
 # 🏆 도전! 롤든벨 (롤 승률 맞추기 퀴즈)
 
 > **리그 오브 레전드의 수 많은 챔피언들의 매치업 승자를 알아맞춰보세요**<br/>
