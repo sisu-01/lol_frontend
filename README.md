@@ -1,6 +1,8 @@
-<img width="1226" alt="logo" src="https://github.com/user-attachments/assets/74331cd2-ad64-45b8-947f-dc901b6b4ee9" />
+<a href="https://lol-updown.com">
+  <img width="1226" alt="logo" src="https://github.com/user-attachments/assets/74331cd2-ad64-45b8-947f-dc901b6b4ee9" />
+</a>
 
-[![도전! 롤든벨](https://img.shields.io/badge/도전!롤든벨-플레이하기-00a0ba?style=for-the-badge&logo=riotgames&logoColor=white)](https://lol-updown.com)
+### 🎮 [지금 플레이하기 (Click Here)](https://lol-updown.com)
 
 # 🏆 도전! 롤든벨 (롤 승률 맞추기 퀴즈)
 
