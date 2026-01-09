@@ -25,7 +25,6 @@
 ### 프론트엔드
 <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=Vite&logoColor=white"/> <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=black"/> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=TypeScript&logoColor=white"/> <img src="https://img.shields.io/badge/Tailwind CSS-06B6D4?style=flat-square&logo=TailwindCSS&logoColor=white"/>
 
-
 ### 백엔드
 <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white"/> <img src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=Flask&logoColor=white"/> <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=Redis&logoColor=white"/> 
 
@@ -72,4 +71,5 @@ CloudFlare가 DNS API를 지원하는 것을 알고서 DNS는 CloudFlare 것을 
 시간이 나면 방도를 찾을 것이다.
 
 ### 나노바나나는 신이다.
+
 내 전속 디자이너 한 명이 생긴 기분이다.
