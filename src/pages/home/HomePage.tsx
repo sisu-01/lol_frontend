@@ -50,12 +50,12 @@ const Home = () => {
           <img src="/logo.svg" className="h-[200px]" alt="도전! 롤든벨" />
         </div>
         <div>
-          <span className="desc text-base sm:text-6xl text-gray-200 drop-shadow-md animate-fadeIn">
+          <span className="desc text-5xl sm:text-6xl text-gray-200 drop-shadow-md animate-fadeIn">
             둘이 싸우면&nbsp;<span className="text-yellow-200">누가</span>&nbsp;이길까?
           </span>
         </div>
         {/* 설명 문구 */}
-        <p className="text-sm sm:text-base text-gray-200 leading-relaxed max-w-xl drop-shadow mt-3">
+        <p className="text-base sm:text-base text-gray-200 leading-relaxed max-w-xl drop-shadow mt-3">
           ** 라인전 승패 말고 게임 최종 승자를 맞춰주세요!😋**
         </p>
         {/* 역할 선택 카드 */}
