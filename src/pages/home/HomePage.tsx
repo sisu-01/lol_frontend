@@ -32,8 +32,8 @@ const Home = () => {
   }
     
   return (
-    // <div className="w-full h-full flex flex-row justify-between items-center"
-    <div className="w-full h-full justify-between items-center overflow-auto"
+    <div className="w-full h-full flex flex-row justify-between items-center"
+    // <div className="w-full h-full justify-between items-center overflow-auto"
       style={{
         backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(${getRandomBg()})`,
         backgroundPosition: "center",
@@ -70,18 +70,18 @@ const Home = () => {
             게임 시작
           </button>
         </div>
-        {/* 하단 안내 텍스트 */}
+
         <div className="text-gray-300 text-sm sm:text-base leading-4 mt-4">
           매치업은 최신 op.gg 데이터 기준입니다.
         </div>
-        <div className="mt-12 p-6 bg-gray-900 text-gray-300 rounded-lg border border-gray-700 leading-relaxed text-sm md:text-base">
+
+        {/* <div className="mt-12 p-6 bg-gray-900 text-gray-300 rounded-lg border border-gray-700 leading-relaxed text-sm md:text-base">
           <section className="mb-6">
             <h2 className="text-xl font-bold text-yellow-400 mb-3">도전! 롤든벨: 리그 오브 레전드 상성 퀴즈 가이드</h2>
             <p>
               리그 오브 레전드(LoL)는 160여 명이 넘는 챔피언들이 존재하며, 각 챔피언 간의 '상성'은 승패를 결정짓는 핵심 요소입니다. <strong>도전! 롤든벨</strong>은 이러한 복잡한 챔피언 메커니즘을 퀴즈 형식으로 풀어내어, 초보자(뉴비)들이 소환사의 협곡에 더 쉽게 적응할 수 있도록 돕는 학습형 웹 게임입니다. 
             </p>
           </section>
-
           <section className="mb-6">
             <h3 className="text-lg font-semibold text-white mb-2 underline underline-offset-4 decoration-yellow-500">게임 방법 및 데이터 기준</h3>
             <p className="mb-2">
@@ -92,14 +92,13 @@ const Home = () => {
               <li><strong>실시간 메타 반영:</strong> 최신 패치 노트와 아이템 변경 사항을 고려하여 주기적으로 퀴즈 데이터셋을 업데이트합니다.</li>
             </ul>
           </section>
-
           <section className="mb-6">
             <h3 className="text-lg font-semibold text-white mb-2">뉴비 플레이 팁: 상성을 알아야 하는 이유</h3>
             <p>
               단순히 컨트롤 실력(피지컬)만으로는 한계가 있습니다. 상대 챔피언의 스킬 쿨타임과 상성을 이해하면, 불리한 라인전에서도 '사리는 플레이'를 통해 성장을 도모할 수 있습니다. <strong>도전! 롤든벨</strong>을 통해 반복적으로 상성을 학습하면 인게임 밴픽 단계에서부터 전략적인 우위를 점할 수 있으며, 이는 곧 승률 상승과 티어 점수 향상으로 이어집니다.
             </p>
           </section>
-        </div>
+        </div> */}
       </div>
       <div className="hidden md:block p-4">
         {/* <GoogldAds /> */}
