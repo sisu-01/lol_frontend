@@ -13,7 +13,7 @@ const positionTxt = {
 const PositionBoard = ({ position }: positionBoardProps) => {
   
   return (
-    <div className="select-none absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 text-white text-4xl font-bold">
+    <div className="select-none absolute top-4 left-1/2 -translate-x-1/2 lg:top-1/3 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 z-10 text-white text-2xl lg:text-4xl font-bold">
       {positionTxt[position]}
     </div>
   );
