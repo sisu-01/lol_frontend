@@ -47,7 +47,7 @@ const GoogldAds = ({ slot }: googleAdsProps) => {
       data-ad-slot={slots[slot]}
       data-ad-format="horizontal"
       data-full-width-responsive="true"
-      style={{ display: "block", width: "100%", zIndex: 10 }}
+      style={{ display: "block", width: "100%", zIndex: 11 }}
     ></ins>
   );
 }
