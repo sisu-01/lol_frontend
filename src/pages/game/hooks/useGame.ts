@@ -144,7 +144,7 @@ export const useGame = (role: RoleType) => {
           ? Number(chmpB)
           : 0; // 비긴 경우 0
       result.push({
-        position: position,
+        position: position as MatchDataType['position'],
         chmpA: { id: Number(chmpA), winRate: chmpAwinRate },
         chmpB: { id: Number(chmpB), winRate: chmpBwinRate },
         winner,

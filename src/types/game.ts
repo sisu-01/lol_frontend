@@ -10,7 +10,7 @@ export type fetchedMatchupsType = {
   lens: number[];
 }
 export type MatchDataType = {
-  position: string;
+  position: 'top'|'jungle'|'mid'|'adc'|'support';
   winner: number;
   count: number;
   chmpA: {id: number; winRate: number};
