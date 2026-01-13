@@ -4,6 +4,7 @@ import type { ChmpDataJsonType, fetchedMatchupsType, GameActionType, GameStateTy
 import { fetchMatchups } from "../../../api/matchups";
 import { getDataDragonChmpJson } from "../../../api/ddragon";
 import ReactGA from "react-ga4"
+import { playSfx } from "../../../utils/sfx";
 
 const initialState: GameStateType = {
   isLoading: true,
@@ -199,7 +200,7 @@ export const useGame = (role: RoleType) => {
     }
   }, []);
 
-  const isCorrectChampion = (selectId: number) => {
+  const isCorrectChampion = async (selectId: number) => {
     if (state.showAdModal || state.isSliding || !state.currentMatch || state.gameover) return;
 
     const { winner } = state.currentMatch;
@@ -209,17 +210,18 @@ export const useGame = (role: RoleType) => {
       // if (isClose) {
       //   console.log("근소했다.");
       // }
+      await playSfx("correct");
       dispatch({ type: "SCORE_UP" });
       dispatch({ type: "SLIDE_START" });
       // nextLevel();
-      return;
-    }
-
-    if (state.extraLife > 1) {
-      dispatch({ type: "LIFE_DONW" })
-      dispatch({ type: "SLIDE_START" });
     } else {
-      gameOver();
+      await playSfx("wrong");
+      if (state.extraLife > 1) {
+        dispatch({ type: "LIFE_DONW" })
+        dispatch({ type: "SLIDE_START" });
+      } else {
+        gameOver();
+      }
     }
   }
 
