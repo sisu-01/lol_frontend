@@ -72,7 +72,7 @@ const Home = () => {
         </div>
 
         <div className="text-gray-300 text-sm sm:text-base leading-4 mt-4">
-          매치업은 최신 op.gg 데이터 기준입니다.
+          승률 데이터는&nbsp;<span className="font-bold">실시간 OP.GG 에메랄드 티어 이상</span>&nbsp;기준입니다.
         </div>
 
         {/* <div className="mt-12 p-6 bg-gray-900 text-gray-300 rounded-lg border border-gray-700 leading-relaxed text-sm md:text-base">
