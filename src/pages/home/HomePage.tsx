@@ -8,6 +8,7 @@ import { rolesData } from "../../data/game";
 const Home = () => {
   const [role, setRole] = useState<RoleType| ''>('');
   const navigate = useNavigate();
+  sessionStorage.setItem('refresh', 'false');
 
   const handleGameStart = () => {
     if (!role) {alert('라인을 선택해주세요.');return;}

@@ -39,11 +39,21 @@ const GamePage = () => {
   
   const location = useLocation();
   const navigate = useNavigate();
-
+  
   useEffect(() => {
-    if(!location.state?.access) {
+    if(!location.state?.access || sessionStorage.getItem('refresh') === "true") {
       navigate('/', { replace: true });
     }
+    
+    const handleBeforeUnload = () => {
+      // 새로고침 또는 창을 닫을 때 실행
+      sessionStorage.setItem('refresh', 'true');
+    };
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => {
+      // 컴포넌트 언마운트 시 이벤트 리스너 제거
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
   }, [location, navigate]);
   
   if (!location.state?.access) return null;
