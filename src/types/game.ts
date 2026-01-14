@@ -19,6 +19,7 @@ export type MatchDataType = {
 export type GameStateType = {
   isLoading: boolean;
   isPending: boolean;
+  isAnimating: boolean | null;
   isSliding: boolean;
   error: boolean;
   round: number;
@@ -34,6 +35,8 @@ export type GameActionType =
   | { type: "GAME_INIT"; }
   | { type: "GAME_START"; payload: { first: MatchDataType; second: MatchDataType; } }
   | { type: "GAME_PEND"; payload: { value: boolean } }
+  | { type: "ANIMATION_START"; payload: { isCorrect: boolean | null } }
+  | { type: "ANIMATION_END"; }
   | { type: "SLIDE_START"; }
   | { type: "SCORE_UP"; }
   | { type: "NEXT_LEVEL"; payload: { nextMatch: MatchDataType; preloadNextMatch: MatchDataType} }

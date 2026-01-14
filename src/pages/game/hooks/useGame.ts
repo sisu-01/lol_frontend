@@ -9,6 +9,7 @@ import { playSfx } from "../../../utils/sfx";
 const initialState: GameStateType = {
   isLoading: true,
   isPending: false,
+  isAnimating: null,
   isSliding: false,
   showAdModal: false,
   error: false,
@@ -37,6 +38,16 @@ const reducer = (state: GameStateType, action: GameActionType): GameStateType =>
         ...state,
         isPending: action.payload.value
       };
+    case "ANIMATION_START":
+      return {
+        ...state,
+        isAnimating: action.payload.isCorrect
+      }
+    case "ANIMATION_END":
+      return {
+        ...state,
+        isAnimating: null
+      }
     case "SLIDE_START":
       return {
         ...state,
@@ -210,12 +221,16 @@ export const useGame = (role: RoleType) => {
       // if (isClose) {
       //   console.log("근소했다.");
       // }
+      dispatch({ type: "ANIMATION_START", payload: { isCorrect } })
       await playSfx("correct");
+      dispatch({ type: "ANIMATION_END" })
       dispatch({ type: "SCORE_UP" });
       dispatch({ type: "SLIDE_START" });
       // nextLevel();
     } else {
+      dispatch({ type: "ANIMATION_START", payload: { isCorrect } })
       await playSfx("wrong");
+      dispatch({ type: "ANIMATION_END" })
       if (state.extraLife > 1) {
         dispatch({ type: "LIFE_DONW" })
         dispatch({ type: "SLIDE_START" });

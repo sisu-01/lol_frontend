@@ -13,6 +13,7 @@ import PositionBoard from "../../components/gameplay/PositionBoard";
 import Admodal from "../../components/gameplay/AdModal";
 import LifeBoard from "../../components/gameplay/LifeBoard";
 import { useEffect } from "react";
+import Animation from "../../components/gameplay/Animation";
 
 const GamePage = () => {
   const [searchParams] = useSearchParams();
@@ -22,6 +23,7 @@ const GamePage = () => {
     chmpDataJson,
     isLoading,
     isPending,
+    isAnimating,
     isSliding,
     showAdModal,
     error,
@@ -65,6 +67,7 @@ const GamePage = () => {
     <>
       <ScoreBoard score={score} />
       <LifeBoard extraLife={extraLife} />
+      <Animation isAnimating={isAnimating} />
       {!isSliding ? (
         <>
           {role==="all" ? <PositionBoard position={currentMatch.position} /> : ''}
