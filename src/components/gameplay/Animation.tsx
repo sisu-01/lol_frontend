@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 interface AnimationProps {
   isAnimating: boolean | null;
@@ -52,7 +52,7 @@ const Animation = ({ isAnimating }: AnimationProps) => {
       </div>
 
       {/* Tailwind 설정 없이 바로 쓸 수 있도록 스타일 주입 */}
-      <style jsx>{`
+      <style>{`
         @keyframes pop-elastic {
           0% { transform: scale(0); opacity: 0; }
           50% { transform: scale(1.2); opacity: 1; }
