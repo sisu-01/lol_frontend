@@ -1,5 +1,5 @@
 // src/pages/game/GamePage.tsx
-import { useSearchParams } from "react-router-dom";
+import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { useGame } from "./hooks/useGame";
 import GameOver from "../../components/gameplay/Gameover";
 import ScoreBoard from "../../components/gameplay/ScoreBoard";
@@ -12,6 +12,7 @@ import { dDragonContext } from "../../context/dDragonContext";
 import PositionBoard from "../../components/gameplay/PositionBoard";
 import Admodal from "../../components/gameplay/AdModal";
 import LifeBoard from "../../components/gameplay/LifeBoard";
+import { useEffect } from "react";
 
 const GamePage = () => {
   const [searchParams] = useSearchParams();
@@ -34,8 +35,18 @@ const GamePage = () => {
     setModalHide,
     isCorrectChampion,
     switchCurrentAndNextMatch,
-   } = useGame(role);
+  } = useGame(role);
+  
+  const location = useLocation();
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    if(!location.state?.access) {
+      navigate('/', { replace: true });
+    }
+  }, [location, navigate]);
+  
+  if (!location.state?.access) return null;
   if (error) return <Error />;
   if (gameover) return <GameOver score={score} gameStart={gameStart} />;
   if (isLoading || currentMatch === null || nextMatch === null) return <Loading />;

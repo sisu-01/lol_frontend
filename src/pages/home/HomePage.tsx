@@ -9,9 +9,9 @@ const Home = () => {
   const [role, setRole] = useState<RoleType| ''>('');
   const navigate = useNavigate();
 
-  const gameStart = () => {
+  const handleGameStart = () => {
     if (!role) {alert('라인을 선택해주세요.');return;}
-    navigate(`/game?role=${role}`);
+    navigate(`/game?role=${role}`, { state: { access: true } });
   }
 
   const bgUrls = [
@@ -64,7 +64,7 @@ const Home = () => {
             <GameSet items={rolesData} setItem={setRole} selected={role} />
           </div>
           <button
-            onClick={gameStart}
+            onClick={handleGameStart}
             className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl shadow-lg transition-all active:scale-95"
             >
             게임 시작
