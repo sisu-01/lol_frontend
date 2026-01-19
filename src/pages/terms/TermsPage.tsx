@@ -40,7 +40,7 @@ const Terms = () => {
         </section>
 
         <div className="text-center text-gray-400 text-sm mt-10">
-          <p>Last updated: 2024. XX. XX</p>
+          <p>Last updated: 2026. 01. 19</p>
         </div>
       </div>
     </>
