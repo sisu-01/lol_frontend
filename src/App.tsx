@@ -9,9 +9,12 @@ import Terms from "./pages/terms/TermsPage";
 import Contact from "./pages/contact/ContactPage";
 import About from "./pages/about/AboutPage";
 
+import { HelmetProvider } from 'react-helmet-async';
+
 const App = () => {
   
   return (
+    <HelmetProvider>
     <div className="flex flex-col h-dvh">
       <BrowserRouter basename={`${import.meta.env.VITE_PUBLIC_URL}`}>
         <GATracker />
@@ -31,6 +34,7 @@ const App = () => {
         <AdBar position='footer' />
       </BrowserRouter>
     </div>
+    </HelmetProvider>
   )
 }
 

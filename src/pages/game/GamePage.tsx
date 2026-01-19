@@ -14,6 +14,7 @@ import Admodal from "../../components/gameplay/AdModal";
 import LifeBoard from "../../components/gameplay/LifeBoard";
 import { useEffect } from "react";
 import Animation from "../../components/gameplay/Animation";
+import { Helmet } from "react-helmet-async";
 
 const GamePage = () => {
   const [searchParams] = useSearchParams();
@@ -63,8 +64,23 @@ const GamePage = () => {
   if (gameover) return <GameOver score={score} gameStart={gameStart} />;
   if (isLoading || currentMatch === null || nextMatch === null) return <Loading />;
 
+  const positionxTxt = {
+    'all': '전 라인',
+    'top': '탑',
+    'jungle': '정글',
+    'mid': '미드',
+    'adc': '원딜',
+    'support': '서포터'
+  }
+
   return (
     <>
+      <Helmet>
+        <title>{positionxTxt[currentMatch.position]} 퀴즈 | 도전! 롤든벨</title>
+        <meta property="og:title" content={`${positionxTxt[currentMatch.position]} 퀴즈 | 도전! 롤든벨`} />
+        <meta name="description" content="두 챔피언이 싸우면 누가 이길까? 최신 데이터 기반 롤 상성 퀴즈! 챔피언 상성, 아이템 빌드와 트렌드를 반영한 퀴즈를 풀고 롤 지식왕에 도전하세요." />
+        <link rel="canonical" href={`https://www.lol-updown.com/game?role=${currentMatch.position}`} />
+      </Helmet>
       <ScoreBoard score={score} />
       <LifeBoard extraLife={extraLife} />
       <Animation isAnimating={isAnimating} />
