@@ -16,7 +16,7 @@ const App = () => {
   return (
     <HelmetProvider>
     <div className="flex flex-col h-dvh">
-      <BrowserRouter basename={`${import.meta.env.VITE_PUBLIC_URL}`}>
+        <BrowserRouter>
         <GATracker />
         <AdBar position='header' />
         <main className="absolute top-[45px] bottom-[45px] sm:top-[95px] sm:bottom-[95px] overflow-hidden flex-1 w-full">
