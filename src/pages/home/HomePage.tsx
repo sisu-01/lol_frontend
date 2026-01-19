@@ -33,6 +33,7 @@ const Home = () => {
   }
     
   return (
+    // <div className="w-full h-full flex flex-row justify-between items-center"
     <div className="w-full h-full justify-between items-center overflow-auto"
       style={{
         backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(${getRandomBg()})`,
@@ -51,9 +52,9 @@ const Home = () => {
         </div>
         <div>
           <h1>
-          <span className="desc text-5xl sm:text-6xl text-gray-200 drop-shadow-md animate-fadeIn">
-            둘이 싸우면&nbsp;<span className="text-yellow-200">누가</span>&nbsp;이길까?
-          </span>
+            <span className="desc text-5xl sm:text-6xl text-gray-200 drop-shadow-md animate-fadeIn">
+              둘이 싸우면&nbsp;<span className="text-yellow-200">누가</span>&nbsp;이길까?
+            </span>
           </h1>
         </div>
         {/* 설명 문구 */}
@@ -77,7 +78,7 @@ const Home = () => {
           승률 데이터는&nbsp;<span className="font-bold">실시간 OP.GG 에메랄드 티어 이상</span>&nbsp;기준입니다.
         </div>
 
-        {/* <div className="mt-12 p-6 bg-gray-900 text-gray-300 rounded-lg border border-gray-700 leading-relaxed text-sm md:text-base">
+        <div className="mt-12 p-6 bg-gray-900 text-gray-300 rounded-lg border border-gray-700 leading-relaxed text-sm md:text-base">
           <section className="mb-6">
             <h2 className="text-xl font-bold text-yellow-400 mb-3">도전! 롤든벨: 리그 오브 레전드 상성 퀴즈 가이드</h2>
             <p>
@@ -100,7 +101,7 @@ const Home = () => {
               단순히 컨트롤 실력(피지컬)만으로는 한계가 있습니다. 상대 챔피언의 스킬 쿨타임과 상성을 이해하면, 불리한 라인전에서도 '사리는 플레이'를 통해 성장을 도모할 수 있습니다. <strong>도전! 롤든벨</strong>을 통해 반복적으로 상성을 학습하면 인게임 밴픽 단계에서부터 전략적인 우위를 점할 수 있으며, 이는 곧 승률 상승과 티어 점수 향상으로 이어집니다.
             </p>
           </section>
-        </div> */}
+        </div>
       </div>
       <div className="hidden md:block p-4">
         {/* <GoogldAds /> */}
