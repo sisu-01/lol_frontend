@@ -1,5 +1,6 @@
 // src/pages/game/GamePage.tsx
-import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
+// import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { useGame } from "./hooks/useGame";
 import GameOver from "../../components/gameplay/Gameover";
 import ScoreBoard from "../../components/gameplay/ScoreBoard";
