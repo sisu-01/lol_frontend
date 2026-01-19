@@ -54,6 +54,7 @@ const Home = () => {
           <span className="desc text-5xl sm:text-6xl text-gray-200 drop-shadow-md animate-fadeIn">
             둘이 싸우면&nbsp;<span className="text-yellow-200">누가</span>&nbsp;이길까?
           </span>
+          </h1>
         </div>
         {/* 설명 문구 */}
         <p className="text-base sm:text-base text-gray-200 leading-relaxed max-w-xl drop-shadow mt-3">
