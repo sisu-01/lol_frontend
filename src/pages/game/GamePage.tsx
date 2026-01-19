@@ -12,7 +12,7 @@ import { dDragonContext } from "../../context/dDragonContext";
 import PositionBoard from "../../components/gameplay/PositionBoard";
 import Admodal from "../../components/gameplay/AdModal";
 import LifeBoard from "../../components/gameplay/LifeBoard";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import Animation from "../../components/gameplay/Animation";
 import { Helmet } from "react-helmet-async";
 
@@ -40,26 +40,26 @@ const GamePage = () => {
     switchCurrentAndNextMatch,
   } = useGame(role);
   
-  const location = useLocation();
-  const navigate = useNavigate();
+  // const location = useLocation();
+  // const navigate = useNavigate();
   
-  useEffect(() => {
-    if(!location.state?.access || sessionStorage.getItem('refresh') === "true") {
-      navigate('/', { replace: true });
-    }
+  // useEffect(() => {
+  //   if(!location.state?.access || sessionStorage.getItem('refresh') === "true") {
+  //     navigate('/', { replace: true });
+  //   }
     
-    const handleBeforeUnload = () => {
-      // 새로고침 또는 창을 닫을 때 실행
-      sessionStorage.setItem('refresh', 'true');
-    };
-    window.addEventListener('beforeunload', handleBeforeUnload);
-    return () => {
-      // 컴포넌트 언마운트 시 이벤트 리스너 제거
-      window.removeEventListener('beforeunload', handleBeforeUnload);
-    };
-  }, [location, navigate]);
+  //   const handleBeforeUnload = () => {
+  //     // 새로고침 또는 창을 닫을 때 실행
+  //     sessionStorage.setItem('refresh', 'true');
+  //   };
+  //   window.addEventListener('beforeunload', handleBeforeUnload);
+  //   return () => {
+  //     // 컴포넌트 언마운트 시 이벤트 리스너 제거
+  //     window.removeEventListener('beforeunload', handleBeforeUnload);
+  //   };
+  // }, [location, navigate]);
   
-  if (!location.state?.access) return null;
+  // if (!location.state?.access) return null;
   if (error) return <Error />;
   if (gameover) return <GameOver score={score} gameStart={gameStart} />;
   if (isLoading || currentMatch === null || nextMatch === null) return <Loading />;
