@@ -33,8 +33,7 @@ const Home = () => {
   }
     
   return (
-    <div className="w-full h-full flex flex-row justify-between items-center"
-    // <div className="w-full h-full justify-between items-center overflow-auto"
+    <div className="w-full h-full justify-between items-center overflow-auto"
       style={{
         backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(${getRandomBg()})`,
         backgroundPosition: "center",
