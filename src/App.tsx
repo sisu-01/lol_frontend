@@ -8,8 +8,10 @@ import FooterBar from "./components/FooterBar";
 import Terms from "./pages/terms/TermsPage";
 import Contact from "./pages/contact/ContactPage";
 import About from "./pages/about/AboutPage";
+import NewsPage from "./pages/news/NewsPage";
 
 import { HelmetProvider } from 'react-helmet-async';
+import GuidePage from "./pages/guide/GuidePage";
 
 const App = () => {
   
@@ -24,6 +26,8 @@ const App = () => {
           {/* <main className="overflow-hidden flex-1 w-full"> */}
             <Routes>
                 <Route path='/' element={<HomePage />} />
+                <Route path='/news' element={<NewsPage />} />
+                <Route path='/guide' element={<GuidePage />} />
                 <Route path='/game' element={<GamePage />} />
                 <Route path='/privacy' element={<Privacy />} />
                 <Route path='/terms' element={<Terms />} />
