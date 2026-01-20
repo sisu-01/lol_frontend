@@ -12,6 +12,7 @@ import NewsPage from "./pages/news/NewsPage";
 
 import { HelmetProvider } from 'react-helmet-async';
 import GuidePage from "./pages/guide/GuidePage";
+import HeaderBar from "./components/HeaderBar";
 
 const App = () => {
   
@@ -20,9 +21,10 @@ const App = () => {
       <div className="flex flex-col h-dvh">
         <BrowserRouter>
           <GATracker />
+          <HeaderBar />
           {/* <AdBar position='header' /> */}
           {/* <main className="absolute top-[45px] bottom-[45px] sm:top-[95px] sm:bottom-[95px] overflow-hidden flex-1 w-full"> */}
-          <main className="absolute top-[0px] bottom-[45px] sm:bottom-[95px] overflow-hidden flex-1 w-full">
+          <main className="absolute top-[45px] sm:top-[95px] bottom-[45px] sm:bottom-[95px] overflow-hidden flex-1 w-full">
           {/* <main className="overflow-hidden flex-1 w-full"> */}
             <Routes>
                 <Route path='/' element={<HomePage />} />
