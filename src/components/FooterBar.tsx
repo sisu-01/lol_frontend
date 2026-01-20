@@ -10,6 +10,8 @@ const FooterBar = () => {
       <Link to={'/contact'} className="hover:text-white hover:underline decoration-1 underline-offset-4 transition-colors">Contact Us</Link>
       <span className="w-[1px] h-2 bg-gray-600"></span>
       <Link to={'/about'} className="hover:text-white hover:underline decoration-1 underline-offset-4 transition-colors">About Us</Link>
+      <span className="w-[1px] h-2 bg-gray-600"></span>
+      © 2026 도전! 롤든벨. All rights reserved.
     </div>
   );
 }
