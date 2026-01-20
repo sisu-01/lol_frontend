@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 
 const GuidePage = () => {
   return (
@@ -48,6 +49,10 @@ const GuidePage = () => {
               <div className="border p-4 rounded-md bg-gray-50">
                 <h3 className="font-bold mb-2">4. 표본 데이터의 함정</h3>
                 <p className="text-sm">픽률이 낮은 장인 위주의 챔피언은 의외로 전체 승률이 높게 나타날 수 있습니다. 통계의 이면을 예측해 보세요.</p>
+              </div>
+              <div className="border p-4 rounded-md bg-gray-50">
+                <h3 className="font-bold mb-2">5. 최신 밸런스 동향 파악</h3>
+                <p className="text-sm">라이엇 게임즈의 패치에 따라서 챔피언들의 밸런스는 변화합니다. <Link to={'/news'} className="font-black text-blue-500">News</Link>에서 최신 패치노트를 확인하고 득점왕을 노리세요.</p>
               </div>
             </div>
           </div>
