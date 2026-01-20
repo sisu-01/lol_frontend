@@ -78,17 +78,13 @@ const Home = () => {
           승률 데이터는&nbsp;<span className="font-bold">실시간 OP.GG 에메랄드 티어 이상</span>&nbsp;기준입니다.
         </div>
 
-        <div className="flex flex-col gap-10 my-5">
-          <div>
-            <Link to={'/news'} className="bg-blue-500 text-white font-semibold py-3 rounded-xl shadow-lg" >
-              🗞️ 최신 리그 오브 레전드 소식 확인하기
-            </Link>
-          </div>
-          <div>
-            <Link to={'/guide'} className="bg-blue-500 text-white font-semibold py-3 rounded-xl shadow-lg" >
-              🤔 도전! 롤든벨 플레이 방법 알아보기
-            </Link>
-          </div>
+        <div className="flex flex-col gap-5 my-5">
+          <Link to={'/news'} className="bg-blue-500 text-white font-semibold p-3 rounded-xl shadow-lg" >
+            🗞️ 최신 리그 오브 레전드 소식 확인하기
+          </Link>
+          <Link to={'/guide'} className="bg-blue-500 text-white font-semibold p-3 rounded-xl shadow-lg" >
+            🤔 도전! 롤든벨 플레이 방법 알아보기
+          </Link>
         </div>
 
         <div className="mt-12 p-6 bg-gray-900 text-gray-300 rounded-lg border border-gray-700 leading-relaxed text-sm md:text-base">
